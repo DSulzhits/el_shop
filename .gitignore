@@ -1,3 +1,5 @@
 venv/
 .idea/
 .coverage
+output.json
+pytest_html_report.html
