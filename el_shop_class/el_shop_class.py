@@ -19,7 +19,3 @@ class Item:
 
     # def __repr__(self):
     #     return f"Товар: {self.name}, цена {self.price}, скидка {self.pay_rate}, количество {self.quantity}"
-
-
-
-
