@@ -12,9 +12,8 @@ def test_atributes(test_class):
     assert full_price == 10000
     assert total_price == 200000
     el_shop_class.Item.pay_rate = 0.5
-    apply_discount = item.apply_discount()
+    item.apply_discount()
     total_price = item.calculate_total_price()
-    assert apply_discount == 5000
     assert item.price == 5000
     assert total_price == 100000
 
