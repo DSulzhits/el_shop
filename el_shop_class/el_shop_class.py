@@ -2,7 +2,7 @@ class Item:
     pay_rate = 1
     item_list = []
 
-    def __init__(self, name, price=0, quantity=0):
+    def __init__(self, name=None, price=0, quantity=0):
         self.name = name
         self.price = price
         self.quantity = quantity
