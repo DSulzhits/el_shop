@@ -4,3 +4,4 @@ venv/
 output.json
 pytest_html_report.html
 .editorconfig
+archive
