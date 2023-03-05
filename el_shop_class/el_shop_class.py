@@ -39,7 +39,7 @@ class Item:
 
     @name.setter
     def name(self, name_inp: str) -> None:
-        """сеттер для записей атрибутов класса"""
+        """Сеттер для записей атрибутов класса"""
         if len(name_inp) <= 10:
             self.__name = name_inp
         else:
@@ -53,5 +53,8 @@ class Item:
         """Метод расчета итоговой стоимости вида товара"""
         return self.price * self.quantity
 
-    # def __repr__(self):
-    #     return f"Товар: {self.name}, цена {self.price}, скидка {self.pay_rate}, количество {self.quantity}"
+    def __repr__(self):
+        return f"Item({self.name}, {self.price}, {self.quantity})"
+
+    def __str__(self):
+        return f"{self.name}"
