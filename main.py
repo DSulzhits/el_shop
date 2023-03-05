@@ -17,15 +17,18 @@ def main():
     # item3.name = 'Смартфон'
     # print(item3.name)
     # # item3.name = 'СуперСмартфон'
-    Item.instantiate_from_csv('items.csv')
-    print(len(Item.item_list))
-    item1 = Item.item_list[0]
-    print(item1.name, item1.price, item1.quantity)
-    item2 = Item.item_list[2]
-    print(item2.name, item2.price, item2.quantity)
-    print(Item.is_integer(5))
-    print(Item.is_integer(5.0))
-    print(Item.is_integer(5.5))
+    # Item.instantiate_from_csv('items.csv')
+    # print(len(Item.item_list))
+    # item1 = Item.item_list[0]
+    # print(item1.name, item1.price, item1.quantity)
+    # item2 = Item.item_list[2]
+    # print(item2.name, item2.price, item2.quantity)
+    # print(Item.is_integer(5))
+    # print(Item.is_integer(5.0))
+    # print(Item.is_integer(5.5))
+    item1 = Item("Смартфон", 10000, 20)
+    print(repr(item1))
+    print(item1)
 
 
 
