@@ -13,6 +13,6 @@ def test_class():
 def instantiate_from_csv():
     filename = 'test.csv'
     Item.instantiate_from_csv(filename)
-    item1 = Item.item_list[3]
+    item1 = Item.item_list[2]
     return Item.instantiate_from_csv(filename), item1
 
