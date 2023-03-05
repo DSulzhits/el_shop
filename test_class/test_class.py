@@ -23,7 +23,7 @@ def test_instantiate_from_csv(instantiate_from_csv):
     """Тестируем работу с .csv файлом"""
     item_list, item = instantiate_from_csv
     assert len(item_list) == 5
-    assert item.name == 'Кабель'
+    assert item.name == 'Ноутбук'
 
 
 def test_is_integer():
@@ -42,3 +42,15 @@ def test_name(test_class):
     with pytest.raises(Exception):
         item.name = "СуперНоутбук"
 
+
+def test_repr(test_class):
+    name, price, quantity = test_class
+    item = Item(name, price, quantity)
+    assert item.__repr__() == 'Item(Смартфон, 10000, 20)'
+
+
+def test_str(test_class):
+    name, price, quantity = test_class
+    item = Item(name, price, quantity)
+    assert item.__str__() == 'Смартфон'
+#
