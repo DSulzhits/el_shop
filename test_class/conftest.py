@@ -9,8 +9,6 @@ def class_test():
     return Item("Смартфон", 10000, 20)
 
 
-# @pytest.fixture
-# def instantiate_from_csv():
-#     Item.instantiate_from_csv('test.csv')
-#     item = Item.item_list[4]
-#     return Item.instantiate_from_csv('test.csv'), item
+@pytest.fixture
+def instantiate_from_csv():
+    return Item.instantiate_from_csv('test.csv')
