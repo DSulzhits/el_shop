@@ -3,18 +3,17 @@ import pytest
 from el_shop_class.el_shop_class import Item
 
 
-def test_instantiate_from_csv():
-    """Тестируем работу с .csv файлом"""
-    Item.instantiate_from_csv('test.csv')
-    assert (len(Item.item_list)) == 5
-    assert Item.item_list[4].name == 'Клавиатура'
-
-
 def test_atributes(class_test):
     """Тестируем атрибуты класса"""
     assert class_test.name == "Смартфон"
     assert class_test.price == 10000
     assert class_test.quantity == 20
+
+
+def test_instantiate_from_csv(instantiate_from_csv):
+    """Тестируем работу с .csv файлом"""
+    assert (len(instantiate_from_csv)) == 5
+    assert instantiate_from_csv[4].name == 'Клавиатура'
 
 
 def test_calculate_total_price(class_test):
