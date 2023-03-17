@@ -3,7 +3,7 @@ import pytest
 from el_shop_class.el_shop_class import Item
 
 
-def test_atributes(class_test):
+def test_init(class_test):
     """Тестируем атрибуты класса"""
     assert class_test.name == "Смартфон"
     assert class_test.price == 10000
@@ -41,6 +41,16 @@ def test_name(class_test):
     assert class_test.name == "Ноутбук"
     with pytest.raises(Exception):
         class_test.name = "СуперНоутбук"
+
+
+def test_add(class_test):
+    class Demo_class:
+        pass
+
+    assert class_test + class_test == 40
+    demo = Demo_class
+    with pytest.raises(ValueError):
+        class_test + demo
 
 
 def test_repr(class_test):
