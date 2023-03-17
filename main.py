@@ -1,4 +1,5 @@
 from el_shop_class.el_shop_class import Item
+from el_shop_class.items_class import Phone
 
 
 def main():
@@ -26,9 +27,26 @@ def main():
     # # print(Item.is_integer(5))
     # # print(Item.is_integer(5.0))
     # # print(Item.is_integer(5.5))
-    item1 = Item("Смартфон", 10000, 20)
-    print(repr(item1))
-    print(item1)
+    # item1 = Item("Смартфон", 10000, 20)
+    # print(repr(item1))
+    # print(item1)
+    phone1 = Phone("iPhone 14", 120_000, 10, 2)
+    item1 = Item("Asus_Ultrabook", 200_000, 15)
+    print(phone1)
+    print(phone1 + phone1)
+    print(item1 + item1)
+    print(item1 + phone1)
+    # print(repr(phone1))
+
+    class Demo_class:
+        pass
+
+    demo = Demo_class
+    print(item1 + demo)
+    print(phone1 + demo)
+    print(repr(phone1))
+    # phone1.number_of_sim = 0
+
 
 
 

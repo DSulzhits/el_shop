@@ -53,6 +53,12 @@ class Item:
         """Метод расчета итоговой стоимости вида товара"""
         return self.price * self.quantity
 
+    def __add__(self, other) -> int:
+        if isinstance(other, Item):
+            return self.quantity + other.quantity
+        else:
+            raise ValueError('Только предметы класса Item или Phone')
+
     def __repr__(self):
         return f"Item({self.name}, {self.price}, {self.quantity})"
 
