@@ -23,9 +23,11 @@ class Phone(Item):
 
 
 class KBLanguage:
+    """Класс миксин"""
     __language = "EN"
 
     def change_language(self):
+        """Метод для изменения языка раскладки клавиатуры"""
         if self.__language == "EN":
             self.__language = "RU"
         else:
@@ -37,6 +39,7 @@ class KBLanguage:
 
 
 class Keyboard(Item, KBLanguage):
+    """Класс с множественным наследованием от основного класса и класса-миксина"""
     def __init__(self, name: str, price: float, quantity: int, language="EN"):
         super().__init__(name, price, quantity)
         self.__language = language
