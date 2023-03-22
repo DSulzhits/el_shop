@@ -1,5 +1,5 @@
 from el_shop_class.el_shop_class import Item
-from el_shop_class.items_class import Phone
+from el_shop_class.items_class import Phone, Keyboard
 
 
 def main():
@@ -30,12 +30,12 @@ def main():
     # item1 = Item("Смартфон", 10000, 20)
     # print(repr(item1))
     # print(item1)
-    phone1 = Phone("iPhone 14", 120_000, 10, 2)
-    item1 = Item("Asus_Ultrabook", 200_000, 15)
-    print(phone1)
-    print(phone1 + phone1)
-    print(item1 + item1)
-    print(item1 + phone1)
+    # phone1 = Phone("iPhone 14", 120_000, 10, 2)
+    # item1 = Item("Asus_Ultrabook", 200_000, 15)
+    # print(phone1)
+    # print(phone1 + phone1)
+    # print(item1 + item1)
+    # print(item1 + phone1)
     # print(repr(phone1))
 
     # class Demo_class:
@@ -46,8 +46,12 @@ def main():
     # print(phone1 + demo)
     # print(repr(phone1))
     # phone1.number_of_sim = 0
-
-
+    kb = Keyboard('Dark Project KD87A', 9600, 5)
+    print(kb)
+    print(kb.language)
+    kb.change_language()
+    print(kb.language)
+    kb.language = 'CH'
 
 
 if __name__ == "__main__":
