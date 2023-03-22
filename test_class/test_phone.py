@@ -18,15 +18,5 @@ def test_number_of_sim(phone_test):
         phone_test.number_of_sim = 0
 
 
-def test_add(phone_test):
-    class Demo_class:
-        pass
-
-    assert phone_test + phone_test == 40
-    demo = Demo_class
-    with pytest.raises(ValueError):
-        phone_test + demo
-
-
 def test_repr(phone_test):
     assert phone_test.__repr__() == 'Phone(Смартфон, 10000, 20, 2)'

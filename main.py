@@ -38,13 +38,13 @@ def main():
     print(item1 + phone1)
     # print(repr(phone1))
 
-    class Demo_class:
-        pass
-
-    demo = Demo_class
-    print(item1 + demo)
-    print(phone1 + demo)
-    print(repr(phone1))
+    # class Demo_class:
+    #     pass
+    #
+    # demo = Demo_class
+    # print(item1 + demo)
+    # print(phone1 + demo)
+    # print(repr(phone1))
     # phone1.number_of_sim = 0
 
 
