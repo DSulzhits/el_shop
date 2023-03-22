@@ -21,11 +21,22 @@ class Phone(Item):
         else:
             raise ValueError("Количество физических SIM-карт должно быть целым числом больше нуля.")
 
-    def __add__(self, other) -> int:
-        if isinstance(other, Phone):
-            return self.quantity + other.quantity
-        else:
-            raise ValueError('Только предметы класса Phone или Item')
 
-    def __repr__(self):
-        return f"Phone({self.name}, {self.price}, {self.quantity}, {self.number_of_sim})"
+class KBLanguage:
+    __language = "EN"
+
+    def change_language(self):
+        if self.__language == "EN":
+            self.__language = "RU"
+        else:
+            self.__language = "EN"
+
+    @property
+    def language(self):
+        return self.__language
+
+
+class Keyboard(Item, KBLanguage):
+    def __init__(self, name: str, price: float, quantity: int, language="EN"):
+        super().__init__(name, price, quantity)
+        self.__language = language
