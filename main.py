@@ -18,12 +18,14 @@ def main():
     # item3.name = 'Смартфон'
     # # print(item3.name)
     # # # item3.name = 'СуперСмартфон'
-    # Item.instantiate_from_csv('test.csv')
-    # print(len(Item.item_list))
+    Item.instantiate_from_csv('items.csv')
+    print(len(Item.item_list))
+    Item.instantiate_from_csv('123.csv')
+    Item.instantiate_from_csv('test_corrupted.csv')
     # item1 = Item.item_list[0]
     # print(item1.name, item1.price, item1.quantity)
-    # # item2 = Item.item_list[2]
-    # # print(item2.name, item2.price, item2.quantity)
+    # item2 = Item.item_list[2]
+    # print(item2.name, item2.price, item2.quantity)
     # # print(Item.is_integer(5))
     # # print(Item.is_integer(5.0))
     # # print(Item.is_integer(5.5))
@@ -46,12 +48,12 @@ def main():
     # print(phone1 + demo)
     # print(repr(phone1))
     # phone1.number_of_sim = 0
-    kb = Keyboard('Dark Project KD87A', 9600, 5)
-    print(kb)
-    print(kb.language)
-    kb.change_language()
-    print(kb.language)
-    kb.language = 'CH'
+    # kb = Keyboard('Dark Project KD87A', 9600, 5)
+    # print(kb)
+    # print(kb.language)
+    # kb.change_language()
+    # print(kb.language)
+    # kb.language = 'CH'
 
 
 if __name__ == "__main__":
