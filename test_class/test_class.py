@@ -14,13 +14,17 @@ def test_instantiate_from_csv(instantiate_from_csv):
     """Тестируем работу с .csv файлом"""
     assert (len(instantiate_from_csv)) == 5
     assert instantiate_from_csv[4].name == 'Клавиатура'
+    assert Item.instantiate_from_csv('123.csv') == 'Отсутствует файл items.csv'
+    assert Item.instantiate_from_csv('test_corrupted.csv') == 'Файл item.csv поврежден'
 
 
 def test_calculate_total_price(class_test):
+    """Тест для метода calculate_total_price"""
     assert class_test.calculate_total_price() == 200000
 
 
 def test_apply_discount(class_test):
+    """Тест для метода apply_discount"""
     class_test.pay_rate = 0.5
     class_test.apply_discount()
     assert class_test.price == 5000
@@ -44,6 +48,7 @@ def test_name(class_test):
 
 
 def test_add(class_test):
+    """Тест для метода add"""
     class Demo_class:
         pass
 
@@ -54,8 +59,10 @@ def test_add(class_test):
 
 
 def test_repr(class_test):
+    """Тест для метода __repr__"""
     assert class_test.__repr__() == 'Item(Смартфон, 10000, 20)'
 
 
 def test_str(class_test):
+    """Тест для метода __str__"""
     assert class_test.__str__() == 'Смартфон'
