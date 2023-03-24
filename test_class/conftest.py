@@ -22,4 +22,7 @@ def keyboard_test():
 
 @pytest.fixture
 def instantiate_from_csv():
-    return Item.instantiate_from_csv('test.csv')
+    Item.item_list.clear()
+    Item.instantiate_from_csv('test.csv')
+    return Item.item_list
+
