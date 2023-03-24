@@ -15,14 +15,22 @@ class Item:
         self.item_list.append(self)
 
     @classmethod
-    def instantiate_from_csv(cls, filename: str) -> list:
-        """Создаем метод класса для работы с .csv файлом"""
-        csv_items = []
-        with open(filename, encoding='UTF-8', newline='') as file:
-            file_info = csv.DictReader(file)
-            for info in file_info:
-                csv_items.append(cls(info['name'], float(info['price']), int(info['quantity'])))
-        return csv_items
+    def instantiate_from_csv(cls, filename: str):
+        """Создаем метод класса для работы с .csv файлом, с обработкой исключений"""
+        try:
+            with open(filename, encoding='UTF-8', newline='') as file:
+                file_info = csv.DictReader(file)
+                for info in file_info:
+                    if list(info.keys()) == ["name", "price", "quantity"]:
+                        cls(info['name'], float(info['price']), int(info['quantity']))
+                    else:
+                        raise InstantiateCSVError
+        except FileNotFoundError:
+            print("Отсутствует файл items.csv")
+            return "Отсутствует файл items.csv"
+        except InstantiateCSVError as error:
+            print(error)
+            return error.__str__()
 
     @staticmethod
     def is_integer(num) -> bool:
@@ -64,3 +72,12 @@ class Item:
 
     def __str__(self):
         return f"{self.name}"
+
+
+class InstantiateCSVError(Exception):
+    """Добавлен класс исключения"""
+    def __init__(self, *args, **kwargs):
+        self.message = args[0] if args else "Файл item.csv поврежден"
+
+    def __str__(self):
+        return self.message
