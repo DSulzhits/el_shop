@@ -22,7 +22,7 @@ class Phone(Item):
             raise ValueError("Количество физических SIM-карт должно быть целым числом больше нуля.")
 
 
-class KBLanguage:
+class KBLanguageMixin:
     """Класс миксин"""
     __language = "EN"
 
@@ -38,8 +38,9 @@ class KBLanguage:
         return self.__language
 
 
-class Keyboard(Item, KBLanguage):
+class Keyboard(KBLanguageMixin, Item):
     """Класс с множественным наследованием от основного класса и класса-миксина"""
+
     def __init__(self, name: str, price: float, quantity: int, language="EN"):
         super().__init__(name, price, quantity)
         self.__language = language
